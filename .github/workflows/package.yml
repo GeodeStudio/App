@@ -4,6 +4,7 @@ on: [push]
 jobs:
   Compile:
     runs-on: windows-latest
+    permissions: write-all
     steps:
       - uses: actions/checkout@v3
 
@@ -13,9 +14,6 @@ jobs:
         with:
           path: src-tauri/tauri.conf.json
           prop_path: package.version
-      
-      - name: Print Version
-        run: echo v${{ steps.version.outputs.prop }}
 
       - uses: actions/setup-node@v3
         with:
