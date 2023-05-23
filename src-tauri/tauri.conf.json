@@ -1,0 +1,67 @@
+{
+  "build": {
+    "beforeDevCommand": "",
+    "beforeBuildCommand": "",
+    "devPath": "../src",
+    "distDir": "../src",
+    "withGlobalTauri": true
+  },
+  "package": {
+    "productName": "geode-studio",
+    "version": "0.0.1"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true
+      },
+      "shell": {
+        "all": false,
+        "open": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "dev.kontroll.geodestudio",
+      "targets": "all",
+      "publisher": "KontrollFreek",
+      "category": "DeveloperTool",
+      "shortDescription": "A tool used for easily creating Geode mods.",
+      "longDescription": "Modelled after GameMaker Studio, Geode Studio aims to be a beginner-friendly way to create their own mods, without the hassle of learning advanced c++, reverse engineering, and all the other complications that come with modding."
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "Geode Studio",
+        "width": 1280,
+        "height": 720,
+        "hiddenTitle": true,
+        "center": true,
+        "decorations": false
+      }
+    ]
+  }
+}

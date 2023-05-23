@@ -1,0 +1,59 @@
+#title {
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #222;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+}
+#title span {
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+#title span:first-child img {
+  margin: 6px;
+  width: 16px;
+  height: 16px;
+}
+#title span:first-child #util a {
+  pointer-events: initial;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  vertical-align: middle;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #222;
+}
+#title span:first-child #util a:hover {
+  background: #333;
+}
+#title span:last-child button {
+  pointer-events: initial;
+  border: none;
+  height: 25px;
+  width: 44px;
+  background: #222;
+  color: #888;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#title span:last-child button:hover {
+  background: #333;
+  color: #fff;
+}
+#title span:last-child button#close:hover {
+  background: #f33;
+}
+#title #workspace {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}/*# sourceMappingURL=title.css.map */
