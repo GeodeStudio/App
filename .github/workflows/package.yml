@@ -1,0 +1,41 @@
+name: Compile
+run-name: Compile
+on: [push]
+jobs:
+  Compile:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: 0
+
+      - name: Get Package Version
+        id: version
+        uses: notiz-dev/github-action-json-property@v0.2.0
+        with:
+          path: './src-tauri/tauri.config.json'
+          prop_path: 'package.version'
+      
+      - run: echo v${{ steps.version.outputs.prop }}
+
+      - name: Setup Node.js 18.x
+          uses: actions/setup-node@v3
+          with:
+            node-version: '18.x'
+
+      - name: Install Packages
+          run: npm install
+
+      - name: Compile Binary
+          run: npm run tauri build
+
+      - name: Create Release
+          uses: svenstaro/upload-release-action@v2
+          with:
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            file: ./src-tauri/target/release/geode-studio.exe
+            asset_name: Geode-Studio-v${{ needs.CheckVersion.version.outputs.prop }}.exe
+            tag: v${{ needs.CheckVersion.version.outputs.prop }}-Win
+            prerelease: true
+            overwrite: true
