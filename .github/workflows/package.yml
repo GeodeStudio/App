@@ -14,7 +14,8 @@ jobs:
           path: src-tauri/tauri.conf.json
           prop_path: package.version
       
-      - run: echo v${{ steps.version.outputs.prop }}
+      - name: Print Version
+        run: echo v${{ steps.version.outputs.prop }}
 
       - uses: actions/setup-node@v3
         with:
