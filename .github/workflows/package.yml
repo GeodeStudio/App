@@ -31,7 +31,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: src-tauri/target/release/geode-studio.exe
+          file: ./src-tauri/target/release/geode-studio.exe
           asset_name: Geode-Studio-v${{ steps.version.outputs.prop }}.exe
           tag: v${{ steps.version.outputs.prop }}-Win
           prerelease: true
