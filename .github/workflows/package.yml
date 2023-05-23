@@ -5,8 +5,7 @@ jobs:
   Compile:
     runs-on: windows-latest
     steps:
-      - name: Checkout
-          uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Get Package Version
         id: version
