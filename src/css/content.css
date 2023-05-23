@@ -4,4 +4,10 @@
   left: 0px;
   right: 0px;
   bottom: 0px;
+  overflow: hidden;
+}
+#content canvas {
+  position: absolute;
+  width: 1200px;
+  height: 1200px;
 }/*# sourceMappingURL=content.css.map */

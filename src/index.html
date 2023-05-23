@@ -6,6 +6,7 @@
     <title>Geode Studio</title>
 
     <script type="module" type="text/javascript" src="/js/title.js" defer></script>
+    <script type="module" type="text/javascript" src="/js/main.js" defer></script>
 
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/title.css" />
@@ -33,6 +34,10 @@
       </span>
     </div>
 
-    <div id="content"></div>
+    <div style="display: none; pointer-events: none;" id="context"></div>
+
+    <div id="content">
+      <canvas data-context></canvas>
+    </div>
   </body>
 </html>

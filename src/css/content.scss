@@ -4,4 +4,11 @@
     left: 0px;
     right: 0px;
     bottom: 0px;
+    overflow: hidden;
+
+    canvas {
+        position: absolute;
+        width: 1200px;
+        height: 1200px;
+    }
 }

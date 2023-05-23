@@ -6,3 +6,14 @@ body {
     font-weight: 400;
     font-size: 12px;
 }
+
+#context {
+    position: absolute;
+    display: flex;
+    z-index: 100;
+    background: #222;
+    border-radius: 8px;
+    box-shadow: 4px 4px 14px #0006;
+    min-width: 50px;
+    min-height: 50px;
+}
