@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get Package Version
+      - name: Get App Version
         id: version
         uses: notiz-dev/github-action-json-property@v0.2.0
         with:
@@ -26,11 +26,13 @@ jobs:
         run: npm run tauri build
 
       - name: Create Release
-        uses: svenstaro/upload-release-action@v2
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./src-tauri/target/release/geode-studio.exe
-          asset_name: Geode-Studio-v${{ steps.version.outputs.prop }}.exe
-          tag: v${{ steps.version.outputs.prop }}-Win
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: |
+            ./src-tauri/target/release/geode-studio.exe
+            ./src-tauri/target/release/bundle/msi/geode-studio_${{ steps.version.outputs.prop }}_x64_en-US.msi
+          asset_name: Geode-Studio-Standalone.exe
+          tag_name: v${{ steps.version.outputs.prop }}-Win
           prerelease: true
           overwrite: true
