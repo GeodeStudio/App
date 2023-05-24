@@ -26,10 +26,10 @@ jobs:
         run: npm run tauri build
 
       - name: Rename MSI
-        run: ren "src-tauri/target/release/bundle/msi/geode-studio_${{ steps.version.outputs.prop }}_x64_en-US.msi" "src-tauri/target/release/bundle/msi/Geode-Studio.msi"
+        run: ren "src-tauri/target/release/bundle/msi/geode-studio_${{ steps.version.outputs.prop }}_x64_en-US.msi" "Geode-Studio.msi"
 
       - name: Rename Standalone
-        run: ren "src-tauri/target/release/geode-studio.exe" "src-tauri/target/release/Geode-Studio-Standalone.exe"
+        run: ren "src-tauri/target/release/geode-studio.exe" "Geode-Studio-Standalone.exe"
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
