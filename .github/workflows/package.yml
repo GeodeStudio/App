@@ -13,7 +13,7 @@ jobs:
         id: version
         uses: notiz-dev/github-action-json-property@v0.2.0
         with:
-          path: src-tauri/tauri.conf.json
+          path: package.json
           prop_path: package.version
       
       - name: Setup Node
