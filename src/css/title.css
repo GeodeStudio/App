@@ -8,6 +8,9 @@
   top: 0px;
   left: 0px;
   right: 0px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #title span {
   display: flex;

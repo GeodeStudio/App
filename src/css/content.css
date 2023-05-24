@@ -8,6 +8,5 @@
 }
 #content canvas {
   position: absolute;
-  width: 1200px;
-  height: 1200px;
+  cursor: grab;
 }/*# sourceMappingURL=content.css.map */

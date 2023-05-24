@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geode Studio</title>
 
-    <script type="module" type="text/javascript" src="/js/title.js" defer></script>
     <script type="module" type="text/javascript" src="/js/main.js" defer></script>
+    <script type="module" type="text/javascript" src="/js/title.js" defer></script>
+    <script type="module" type="text/javascript" src="/js/canvas.js" defer></script>
 
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/title.css" />
@@ -26,7 +27,7 @@
           <a draggable="false" href="javascript: void(0)"><u>H</u>elp</a>
         </span>
       </span>
-      <p id="workspace">core.gdl - BetterEdit</p>
+      <p id="workspace">core.gdl - nong-downloader</p>
       <span>
         <button id="min"><svg width="12" height="12" viewBox="0 0 12 12"><rect fill="currentColor" width="10" height="1" x="1" y="6"></rect></svg></button>
         <button id="max"><svg width="12" height="12" viewBox="0 0 12 12"><rect width="9" height="9" x="1.5" y="1.5" fill="none" stroke="currentColor"></rect></svg></button>
@@ -37,7 +38,7 @@
     <div style="display: none; pointer-events: none;" id="context"></div>
 
     <div id="content">
-      <canvas data-context></canvas>
+      <canvas data-context width="7000" height="7000"></canvas>
     </div>
   </body>
 </html>
