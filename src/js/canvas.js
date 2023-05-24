@@ -10,8 +10,8 @@ for (let x = 10; x < canvas.canvas.width; x += 60) {
     }
 }
 
-canvas.canvas.style.top = canvas.canvas.height * -0.5 + 'px'
-canvas.canvas.style.left = canvas.canvas.width * -0.5 + 'px'
+canvas.canvas.style.top = (canvas.canvas.height * -0.5) + (window.innerHeight * 0.5)  + 'px'
+canvas.canvas.style.left = (canvas.canvas.width * -0.5) + (window.innerWidth * 0.5) + 'px'
 
 let dragging = 0
 
@@ -28,7 +28,7 @@ document.body.addEventListener('mouseup', e => {
 })
 
 document.addEventListener('mousemove', e => {
-    if (dragging <= 0) return
+    if (dragging == 0) return
 
     let top = parseInt(canvas.canvas.style.top) + e.movementY
     let left = parseInt(canvas.canvas.style.left) + e.movementX
@@ -36,3 +36,4 @@ document.addEventListener('mousemove', e => {
     canvas.canvas.style.top = top + 'px'
     canvas.canvas.style.left = left + 'px'
 })
+

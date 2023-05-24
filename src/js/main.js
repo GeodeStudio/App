@@ -1,6 +1,7 @@
 let context = document.querySelector('#context')
 
-function hideContext() {
+function hideContext(e) {
+    if (e.button == 2 && e.target.dataset.context != undefined) return
     context.style.display = 'none'
     context.style.pointerEvent = 'none'
 }
@@ -25,4 +26,19 @@ document.addEventListener('contextmenu', e => {
         context.style.left = e.clientX - bounding.width + 'px'
 })
 
-document.addEventListener('click', hideContext)
+document.addEventListener('mousedown', hideContext)
+
+let sidebar = false
+
+document.querySelector('#sidebar #toggle').onclick = () => {
+    console.log(sidebar)
+    if (sidebar) {
+        document.querySelector('#sidebar').style.width = '0px'
+        document.querySelector('#sidebar #toggle').dataset.status = 'off'
+        sidebar = false
+    } else {
+        document.querySelector('#sidebar').style.width = ''
+        document.querySelector('#sidebar #toggle').dataset.status = 'on'
+        sidebar = true
+    }
+}

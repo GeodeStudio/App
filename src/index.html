@@ -38,7 +38,17 @@
     <div style="display: none; pointer-events: none;" id="context"></div>
 
     <div id="content">
-      <canvas data-context width="7000" height="7000"></canvas>
+      <canvas data-context width="8000" height="8000"></canvas>
+      <div id="sidebar" style="width: 0px;">
+        <button data-status="off" id="toggle">
+          <svg data-type="off" xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 -960 960 960">
+            <path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
+          </svg>
+          <svg data-type="on" xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" width="25">
+            <path d="m249-207-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
+          </svg>
+        </button>
+      </div>
     </div>
   </body>
 </html>
