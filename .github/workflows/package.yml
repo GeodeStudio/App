@@ -6,7 +6,8 @@ jobs:
     runs-on: windows-latest
     permissions: write-all
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Get App Version
         id: version
@@ -14,10 +15,14 @@ jobs:
         with:
           path: src-tauri/tauri.conf.json
           prop_path: package.version
-
-      - uses: actions/setup-node@v3
+      
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
           node-version: '18.x'
+
+      - name: Version Bump
+        run: node versionbump.js
 
       - name: Install Packages
         run: npm install
