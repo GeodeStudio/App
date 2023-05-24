@@ -14,7 +14,7 @@ jobs:
         uses: notiz-dev/github-action-json-property@v0.2.0
         with:
           path: package.json
-          prop_path: package.version
+          prop_path: version
       
       - name: Setup Node
         uses: actions/setup-node@v3
