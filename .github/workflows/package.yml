@@ -45,8 +45,9 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
+            ./src-tauri/target/release/bundle/dmg/geode-studio_${{ steps.version.outputs.prop }}_amd64.deb
+            ./src-tauri/target/release/bundle/dmg/geode-studio_${{ steps.version.outputs.prop }}_amd64.AppImage
             ./src-tauri/target/release/bundle/msi/geode-studio_${{ steps.version.outputs.prop }}_x64_en-US.msi
-            ./src-tauri/target/release/bundle/deb/geode-studio_${{ steps.version.outputs.prop }}_amd64.deb
             ./src-tauri/target/release/bundle/dmg/geode-studio_${{ steps.version.outputs.prop }}_x64.dmg
           tag_name: v${{ steps.version.outputs.prop }}
           prerelease: true

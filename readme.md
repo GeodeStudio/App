@@ -3,4 +3,4 @@
 ## When Downloading
 All downloaded are in the [Releases](https://github.com/GDMod-Development/App/releases) tab.
 
-Only versions 0.0.5 and upward support Mac and Linux.
+0.0.5 and upward support Mac and Linux, 0.0.7 includes .AppImage files.
