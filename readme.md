@@ -1,5 +1,5 @@
 # Geode Studio
-[![Compile](https://github.com/GDMod-Development/App/actions/workflows/package.yml/badge.svg?event=push)](https://github.com/GDMod-Development/App/actions/workflows/package.yml)
+[![Compile](https://github.com/GDMod-Development/App/actions/workflows/package.yml/badge.svg)](https://github.com/GDMod-Development/App/actions/workflows/package.yml)
 ## When Downloading
 All downloaded are in the [Releases](https://github.com/GDMod-Development/App/releases) tab.
 
