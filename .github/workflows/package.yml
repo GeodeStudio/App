@@ -3,11 +3,21 @@ run-name: Compile
 on: [push]
 jobs:
   Compile:
-    runs-on: windows-latest
     permissions: write-all
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ windows-latest, ubuntu-20.04, macos-latest ]
+    runs-on: ${{ matrix.platform }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Install Linux Dependencies
+        if: matrix.platform == 'ubuntu-20.04'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev librsvg2-dev
 
       - name: Get App Version
         id: version
@@ -30,18 +40,13 @@ jobs:
       - name: Compile Binaries
         run: npm run tauri build
 
-      - name: Rename MSI
-        run: ren "src-tauri/target/release/bundle/msi/geode-studio_${{ steps.version.outputs.prop }}_x64_en-US.msi" "Geode-Studio.msi"
-
-      - name: Rename Standalone
-        run: ren "src-tauri/target/release/geode-studio.exe" "Geode-Studio-Standalone.exe"
-
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           files: |
-            ./src-tauri/target/release/bundle/msi/Geode-Studio.msi
-            ./src-tauri/target/release/Geode-Studio-Standalone.exe
-          tag_name: v${{ steps.version.outputs.prop }}-Win
+            ./src-tauri/target/release/bundle/msi/geode-studio_${{ steps.version.outputs.prop }}_x64_en-US.msi
+            ./src-tauri/target/release/bundle/deb/geode-studio_${{ steps.version.outputs.prop }}_amd64.deb
+            ./src-tauri/target/release/bundle/dmg/geode-studio_${{ steps.version.outputs.prop }}_x64.dmg
+          tag_name: v${{ steps.version.outputs.prop }}
           prerelease: true
