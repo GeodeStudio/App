@@ -36,6 +36,17 @@ document.addEventListener('mousemove', e => {
     let top = parseInt(canvas.canvas.style.top) + e.movementY
     let left = parseInt(canvas.canvas.style.left) + e.movementX
 
+    if (top > 0) top = 0
+    if (left > 0) left = 0
+
+    let rect = canvas.canvas.getBoundingClientRect()
+
+    let bottom = rect.bottom - window.innerHeight + e.movementY
+    let right = rect.right - window.innerWidth + e.movementX
+
+    if (bottom < 0) top = -canvas.canvas.height + window.innerHeight - 25
+    if (right < 0) left = -canvas.canvas.width + window.innerWidth
+
     canvas.canvas.style.top = top + 'px'
     canvas.canvas.style.left = left + 'px'
 })
