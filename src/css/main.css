@@ -17,14 +17,14 @@ body {
   background: #222;
   border-radius: 8px;
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
-  min-width: 16px;
-  min-height: 16px;
+  min-width: 120px;
+  min-height: 30px;
 }
 #context button {
   border: none;
   background: #222;
   color: #888;
-  min-width: 100px;
+  min-width: 120px;
   height: 30px;
   cursor: pointer;
   display: flex;
@@ -46,6 +46,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+#context button span:first-child {
+  margin-right: 10px;
 }
 #context button span svg {
   width: 20px;

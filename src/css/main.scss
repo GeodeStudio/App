@@ -17,14 +17,14 @@ body {
     background: #222;
     border-radius: 8px;
     box-shadow: 4px 4px 14px #0006;
-    min-width: 16px;
-    min-height: 16px;
+    min-width: 120px;
+    min-height: 30px;
 
     button {
         border: none;
         background: #222;
         color: #888;
-        min-width: 100px;
+        min-width: 120px;
         height: 30px;
         cursor: pointer;
         display: flex;
@@ -49,6 +49,10 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
+
+            &:first-child {
+                margin-right: 10px;
+            }
 
             svg {
                 width: 20px;
