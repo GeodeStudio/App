@@ -39,7 +39,7 @@
         "icons/icon.ico"
       ],
       "identifier": "dev.kontroll.geodestudio",
-      "targets": "all",
+      "targets": [ "deb", "msi", "dmg" ],
       "publisher": "KontrollFreek",
       "category": "DeveloperTool",
       "shortDescription": "A tool used for easily creating Geode mods.",

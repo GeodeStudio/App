@@ -10,10 +10,54 @@ body {
 #context {
     position: absolute;
     display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-direction: column;
     z-index: 100;
     background: #222;
     border-radius: 8px;
     box-shadow: 4px 4px 14px #0006;
-    min-width: 50px;
-    min-height: 50px;
+    min-width: 16px;
+    min-height: 16px;
+
+    button {
+        border: none;
+        background: #222;
+        color: #888;
+        min-width: 100px;
+        height: 30px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:first-child {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        &:hover {
+            background: #282828;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 20px;
+                height: 20px;
+        
+                path {
+                    fill: #888;
+                }
+            }
+        }
+    }
 }

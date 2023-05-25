@@ -40,10 +40,14 @@
 #content #sidebar #toggle[data-status=on] svg[data-type=off] {
   display: none;
 }
+#content #sidebar #toggle svg {
+  width: 25px;
+  height: 25px;
+}
 #content #sidebar #toggle svg path {
   fill: #888;
 }
 #content #sidebar #toggle:hover {
-  background: #1c1c1c;
+  background: #282828;
   cursor: pointer;
 }/*# sourceMappingURL=content.css.map */
