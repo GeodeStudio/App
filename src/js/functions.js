@@ -1,3 +1,19 @@
+let sidebar = false
+
+function openSidebar() {
+    document.querySelector('#sidebar').style.width = ''
+    document.querySelector('#sidebar #toggle').dataset.status = 'on'
+    sidebar = true
+}
+
+function closeSidebar() {
+    document.querySelector('#sidebar').style.width = '0px'
+    document.querySelector('#sidebar #toggle').dataset.status = 'off'
+    sidebar = false
+}
+
+
+
 document.addEventListener('load', () => {
     var context = document.querySelector('#context')
 })
@@ -33,12 +49,14 @@ function showContext(e) {
     context.style.pointerEvents = ''
 }
 
-function hideContext(e) {
-    if ((e.button == 2 && e.target.dataset.context != undefined) || context.contains(e.target)) return
+function hideContext() {
     context.style.opacity = '0'
     context.style.pointerEvents = 'none'
 }
 
 document.addEventListener('contextmenu', showContext)
 
-document.addEventListener('mousedown', hideContext)
+document.addEventListener('mousedown', e => {
+    if ((e.button == 2 && e.target.dataset.context != undefined) || context.contains(e.target)) return
+    hideContext()
+})
