@@ -1,22 +1,26 @@
 let sidebar = false
 
+document.addEventListener('load', () => {
+    var context = document.querySelector('#context')
+    var sidebar = document.querySelector('#sidebar')
+    var toggle = document.querySelector('#sidebar #toggle')
+})
+
+
+
 function openSidebar() {
-    document.querySelector('#sidebar').style.width = ''
-    document.querySelector('#sidebar #toggle').dataset.status = 'on'
+    sidebar.style.width = ''
+    toggle.dataset.status = 'on'
     sidebar = true
 }
 
 function closeSidebar() {
-    document.querySelector('#sidebar').style.width = '0px'
-    document.querySelector('#sidebar #toggle').dataset.status = 'off'
+    sidebar.style.width = '0px'
+    toggle.dataset.status = 'off'
     sidebar = false
 }
 
 
-
-document.addEventListener('load', () => {
-    var context = document.querySelector('#context')
-})
 
 function clearContext() {
     context.innerHTML = ''

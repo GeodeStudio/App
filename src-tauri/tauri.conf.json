@@ -27,6 +27,9 @@
       "shell": {
         "all": false,
         "open": true
+      },
+      "os": {
+        "all": true
       }
     },
     "bundle": {
@@ -60,7 +63,8 @@
         "height": 720,
         "hiddenTitle": true,
         "center": true,
-        "decorations": false
+        "decorations": false,
+        "transparent": true
       }
     ]
   }

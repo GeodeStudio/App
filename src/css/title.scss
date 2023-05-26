@@ -15,7 +15,11 @@
         align-items: center;
         pointer-events: none;
 
-        &:first-child {
+        &#stoplight {
+            display: none;
+        }
+
+        &#info {
 
             img {
                 margin: 6px;
@@ -39,7 +43,7 @@
             }
         }
 
-        &:last-child {
+        &#controls {
             button {
                 pointer-events: initial;
                 border: none;
@@ -71,5 +75,47 @@
         top: 50%;
         transform: translate(-50%, -50%);
         margin: 0px;
+    }
+}
+
+body.darwin {
+    #title {
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+
+        #stoplight {
+            display: flex;
+            padding-left: 6px;
+            pointer-events: all;
+
+            button {
+                border: none;
+                border-radius: 50%;
+                width: 13px;
+                height: 13px;
+                margin-right: 10px;
+                padding: 0px;
+                cursor: pointer;
+
+                &#close {
+                    background: #ff5c5c;
+                    border: 1px solid #e33e41;
+                }
+
+                &#min {
+                    background: #ffbd4c;
+                    border: 1px solid #e09e3e;
+                }
+
+                &#max {
+                    background: #00ca56;
+                    border: 1px solid #14ae46;
+                }
+            }
+        }
+
+        #controls, #info {
+            display: none;
+        }
     }
 }

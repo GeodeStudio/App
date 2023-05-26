@@ -17,40 +17,57 @@
   </head>
 
   <body>
-    <div id="title" data-tauri-drag-region>
-      <span>
-        <img src="/assets/icon.png">
-        <span id="util">
-          <a draggable="false" href="javascript: void(0)"><u>F</u>ile</a>
-          <a draggable="false" href="javascript: void(0)"><u>E</u>dit</a>
-          <a draggable="false" href="javascript: void(0)"><u>V</u>iew</a>
-          <a draggable="false" href="javascript: void(0)"><u>B</u>uild</a>
-          <a draggable="false" href="javascript: void(0)"><u>T</u>erminal</a>
-          <a draggable="false" href="javascript: void(0)"><u>H</u>elp</a>
+    <div id="backdrop">
+      <div id="title" data-tauri-drag-region>
+        <span id="stoplight">
+          <button id="close"></button>
+          <button id="min"></button>
+          <button id="max"></button>
         </span>
-      </span>
-      <p id="workspace">New Project - Geode Studio</p>
-      <span>
-        <button id="min"><svg width="12" height="12" viewBox="0 0 12 12"><rect fill="currentColor" width="10" height="1" x="1" y="6"></rect></svg></button>
-        <button id="max"><svg width="12" height="12" viewBox="0 0 12 12"><rect width="9" height="9" x="1.5" y="1.5" fill="none" stroke="currentColor"></rect></svg></button>
-        <button id="close"><svg width="12" height="12" viewBox="0 0 12 12"><polygon fill="currentColor" fill-rule="evenodd" points="11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1"></polygon></svg></button>
-      </span>
-    </div>
-
-    <div style="opacity: 0; pointer-events: none;" id="context"></div>
-
-    <div id="content">
-      <canvas data-context width="8000" height="8000"></canvas>
-      <div id="sidebar" style="width: 0px;">
-        <button data-status="off" id="toggle">
-          <svg data-type="off" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-            <path d="M150-240q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-300h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-240H150Zm0-210q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-510h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-450H150Zm0-210q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-720h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-660H150Z"/>
-          </svg>
-          <svg data-type="on" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
-            <path d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z" />
-          </svg>
-        </button>
+        <span id="info">
+          <img src="/assets/icon.png">
+          <span id="util" class="win">
+            <a draggable="false" href="javascript: void(0)"><u>F</u>ile</a>
+            <a draggable="false" href="javascript: void(0)"><u>E</u>dit</a>
+            <a draggable="false" href="javascript: void(0)"><u>V</u>iew</a>
+            <a draggable="false" href="javascript: void(0)"><u>B</u>uild</a>
+            <a draggable="false" href="javascript: void(0)"><u>T</u>erminal</a>
+            <a draggable="false" href="javascript: void(0)"><u>H</u>elp</a>
+          </span>
+        </span>
+        <p id="workspace">New Project - Geode Studio</p>
+        <span id="controls">
+          <button id="min"><svg width="12" height="12" viewBox="0 0 12 12">
+              <rect fill="currentColor" width="10" height="1" x="1" y="6"></rect>
+            </svg></button>
+          <button id="max"><svg width="12" height="12" viewBox="0 0 12 12">
+              <rect width="9" height="9" x="1.5" y="1.5" fill="none" stroke="currentColor"></rect>
+            </svg></button>
+          <button id="close"><svg width="12" height="12" viewBox="0 0 12 12">
+              <polygon fill="currentColor" fill-rule="evenodd"
+                points="11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1">
+              </polygon>
+            </svg></button>
+        </span>
       </div>
+      
+      <div style="opacity: 0; pointer-events: none;" id="context"></div>
+      
+      <div id="content">
+        <canvas data-context width="8000" height="8000"></canvas>
+        <div id="sidebar" style="width: 0px;">
+          <button data-status="off" id="toggle">
+            <svg data-type="off" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path
+                d="M150-240q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-300h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-240H150Zm0-210q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-510h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-450H150Zm0-210q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T150-720h660q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T810-660H150Z" />
+            </svg>
+            <svg data-type="on" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path
+                d="M480-438 270-228q-9 9-21 9t-21-9q-9-9-9-21t9-21l210-210-210-210q-9-9-9-21t9-21q9-9 21-9t21 9l210 210 210-210q9-9 21-9t21 9q9 9 9 21t-9 21L522-480l210 210q9 9 9 21t-9 21q-9 9-21 9t-21-9L480-438Z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+      </body>
     </div>
-  </body>
 </html>
