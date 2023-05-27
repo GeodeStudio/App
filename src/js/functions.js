@@ -1,6 +1,6 @@
-let sidebar = false
+let sidebaractive = false;
 
-document.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     var context = document.querySelector('#context')
     var sidebar = document.querySelector('#sidebar')
     var toggle = document.querySelector('#sidebar #toggle')
@@ -11,13 +11,13 @@ document.addEventListener('load', () => {
 function openSidebar() {
     sidebar.style.width = ''
     toggle.dataset.status = 'on'
-    sidebar = true
+    sidebaractive = true
 }
 
 function closeSidebar() {
     sidebar.style.width = '0px'
     toggle.dataset.status = 'off'
-    sidebar = false
+    sidebaractive = false
 }
 
 

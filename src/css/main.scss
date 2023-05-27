@@ -82,9 +82,8 @@ body {
 
 body.darwin {
     #context {
-        background: #1112;
+        background: #1116;
         border: 2px solid #222;
-        backdrop-filter: blur(10px);
 
         button {
             &:first-child {
@@ -98,7 +97,7 @@ body.darwin {
             }
         
             &:hover {
-                background: #28282822;
+                background: #28282866;
             }
         }
     }

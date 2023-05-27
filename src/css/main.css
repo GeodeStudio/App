@@ -69,10 +69,8 @@ body.darwin #backdrop {
 }
 
 body.darwin #context {
-  background: rgba(17, 17, 17, 0.1333333333);
+  background: rgba(17, 17, 17, 0.4);
   border: 2px solid #222;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
 }
 body.darwin #context button:first-child {
   border-top-left-radius: 6px;
@@ -83,5 +81,5 @@ body.darwin #context button:last-child {
   border-bottom-right-radius: 6px;
 }
 body.darwin #context button:hover {
-  background: rgba(40, 40, 40, 0.1333333333);
+  background: rgba(40, 40, 40, 0.4);
 }/*# sourceMappingURL=main.css.map */
